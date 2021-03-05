@@ -1,0 +1,63 @@
+<%- include ('partials/header.ejs'); %>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-7">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <td>id_estudio</td>
+              <td>nombre</td>
+              <td>Productora_id_productora</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (data) { %>
+              <% for(var i = 0; i < data.length; i++) { %>
+                <tr>
+                  <td><%= data[i].id_estudio %></td>
+                  <td><%= data[i].nombre %></td>
+                  <td><%= data[i].Productora_id_productora %></td>
+                  <td>
+                    <a href="/estudio_musica/update/<%= data[i].id_estudio %>" class="btn btn-info">Edit</a>
+                    <a href="/estudio_musica/delete/<%= data[i].id_estudio %>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+              <% } %>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card-body">
+  
+          <form action="/estudio_musica/add" method="post">
+            <div class="form-group">
+                <input type="number" name="id_estudio" placeholder="id" class="form-control" autofocus>
+            <div class="form-group">
+              <input type="text" name="nombre" placeholder="Nombre" class="form-control" autofocus>
+            <div class="form-group">
+              <input type="number" name="Productora_id_productora" placeholder="id Productora" class="form-control">
+            </div>
+  
+            <button type="submit" class="btn btn-primary">
+              Add estudio
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <form action="/" method="GET">
+          <button type="submit" class="btn btn-danger">
+            Return
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+
+<%- include ('partials/footer.ejs'); %>

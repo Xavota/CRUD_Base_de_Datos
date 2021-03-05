@@ -1,0 +1,45 @@
+<%- include ('partials/header.ejs'); %>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-5 offset-md-3 card">
+        <div class="card-body">
+          <form action="/alumno" method="GET">
+            <button type="submit" class="btn btn-primary">
+              Tabla alumnos
+            </button>
+          </form>
+        </div>
+        <div class="card-body">
+            <form action="/estudio_musica" method="GET">
+              <button type="submit" class="btn btn-primary">
+                Tabla Estudios de musica
+              </button>
+            </form>
+        </div>
+        <div class="card-body">
+            <form action="/productora" method="GET">
+              <button type="submit" class="btn btn-primary">
+                Tabla Productora
+              </button>
+            </form>
+        </div>
+        <div class="card-body">
+            <form action="/clientes" method="GET">
+              <button type="submit" class="btn btn-primary">
+                Tabla Clientes
+              </button>
+            </form>
+        </div>
+        <div class="card-body">
+            <form action="/estuio_has_clientes" method="GET">
+              <button type="submit" class="btn btn-primary">
+                Tabla Estudio_has_cliente
+              </button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include ('partials/footer.ejs'); %>

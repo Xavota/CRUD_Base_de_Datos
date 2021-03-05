@@ -1,0 +1,67 @@
+<%- include ('partials/header.ejs'); %>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-7">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <td>id_Alumno</td>
+              <td>nombre</td>
+              <td>colegiatura</td>
+              <td>Estudio_Musica_id_estudio</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (data) { %>
+              <% for(var i = 0; i < data.length; i++) { %>
+                <tr>
+                  <td><%= data[i].id_Alumno %></td>
+                  <td><%= data[i].nombre %></td>
+                  <td><%= data[i].colegiatura %></td>
+                  <td><%= data[i].Estudio_Musica_id_estudio %></td>
+                  <td>
+                    <a href="alumno/update/<%= data[i].id_Alumno %>" class="btn btn-info">Edit</a>
+                    <a href="alumno/delete/<%= data[i].id_Alumno %>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+              <% } %>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card-body">
+  
+          <form action="alumno/add" method="post">
+            <div class="form-group">
+                <input type="number" name="id_Alumno" placeholder="id" class="form-control" autofocus>
+            <div class="form-group">
+              <input type="text" name="nombre" placeholder="Nombre" class="form-control" autofocus>
+            <div class="form-group">
+              <input type="number" name="colegiatura" placeholder="Colegiatura" class="form-control">
+              <div class="form-group">
+                <input type="number" name="Estudio_Musica_id_estudio" placeholder="Estudio de Musica" class="form-control">
+            </div>
+  
+            <button type="submit" class="btn btn-primary">
+              Add alumno
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <form action="/" method="GET">
+          <button type="submit" class="btn btn-danger">
+            Return
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+
+<%- include ('partials/footer.ejs'); %>

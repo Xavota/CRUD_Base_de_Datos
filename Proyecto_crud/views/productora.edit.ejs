@@ -1,0 +1,20 @@
+<%- include ('partials/header.ejs'); %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3 card">
+      <div class="card-body">
+        <form action="/productora/update/<%= data.id_productora %>" method="POST">
+          <div class="form-group">
+            <input type="text" name="Nombre" value="<%= data.Nombre%>" placeholder="Nombre" class="form-control" autofocus>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            save productora
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include ('partials/footer.ejs'); %>
